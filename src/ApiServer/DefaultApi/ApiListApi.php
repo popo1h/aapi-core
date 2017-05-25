@@ -28,7 +28,7 @@ class ApiListApi extends BaseApi
     }
 
     /**
-     * @intro 获取api列表
+     * @api-intro 获取api列表
      * @return Response
      */
     public function getApiList()
