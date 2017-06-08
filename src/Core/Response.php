@@ -32,7 +32,7 @@ class Response implements StringPackInterface
      * @param string $msg
      * @param array|null $data
      */
-    public function __construct($code, $msg, $data)
+    public function __construct($code = self::CODE_SUCCESS, $msg = '', $data = null)
     {
         $this->code = $code;
         $this->msg = $msg;
