@@ -2,6 +2,7 @@
 
 namespace Popo1h\AapiCore\ApiClient;
 
+use Popo1h\AapiCore\Core\Exceptions\ApiDoException\ApiResponseErrorException;
 use Popo1h\AapiCore\Core\Net;
 use Popo1h\AapiCore\Core\Request;
 use Popo1h\AapiCore\Core\RequestParam;
@@ -34,6 +35,7 @@ class ApiClient
      * @param RequestParam $param
      * @param string|null $version
      * @return Response
+     * @throws ApiResponseErrorException
      */
     public function request($apiName, RequestParam $param, $version = null)
     {
@@ -42,7 +44,11 @@ class ApiClient
         $apiUrl = $this->serverUrl;
 
         $responseStr = $this->net->request($apiUrl, StringPack::pack($request));
-        $response = StringPack::unpack($responseStr);
+        try {
+            $response = StringPack::unpack($responseStr);
+        } catch (\Exception $e) {
+            throw (new ApiResponseErrorException($responseStr));
+        }
 
         return $response;
     }

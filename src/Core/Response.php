@@ -11,6 +11,7 @@ class Response implements StringPackInterface
 
     const CODE_SUCCESS = 1;
     const CODE_ERROR = 0;
+    const CODE_REQUEST_ERROR = -1;
 
     /**
      * @var int
@@ -26,6 +27,11 @@ class Response implements StringPackInterface
      * @var array|null
      */
     private $data;
+
+    /**
+     * @var string|null
+     */
+    private $originResponseContent;
 
     /**
      * @param int $code
@@ -45,6 +51,7 @@ class Response implements StringPackInterface
             'code',
             'msg',
             'data',
+            'originResponseContent',
         ];
     }
 
@@ -70,5 +77,21 @@ class Response implements StringPackInterface
     public function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getOriginResponseContent()
+    {
+        return $this->originResponseContent;
+    }
+
+    /**
+     * @param null|string $originResponseContent
+     */
+    public function setOriginResponseContent($originResponseContent)
+    {
+        $this->originResponseContent = $originResponseContent;
     }
 }
