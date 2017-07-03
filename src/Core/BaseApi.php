@@ -2,7 +2,7 @@
 
 namespace Popo1h\AapiCore\Core;
 
-use Popo1h\AapiCore\Core\Exceptions\ApiDoException\ApiVersionNotFoundException;
+use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiDoException\ApiVersionNotFoundException;
 use Popo1h\Support\Objects\CommentHelper;
 
 abstract class BaseApi
@@ -21,16 +21,22 @@ abstract class BaseApi
 
     public static function getIntro($version = null)
     {
+        $intro = '';
+
         $methodName = static::getMethodNameByVersion($version);
 
         $commentHelper = CommentHelper::createByMethod(static::class, $methodName);
         $intros = $commentHelper->getCommentItemContents('api-intro');
-
-        if (!isset($intros[0])) {
-            return '';
-        } else {
-            return $intros[0];
+        if (isset($intros[0])) {
+            $intro .= $intros[0] . " \n";
         }
+
+        $params = $commentHelper->getCommentItemContents('api-param');
+        foreach ($params as $param) {
+            $intro .= 'param: ' . $param . " \n";
+        }
+
+        return $intro;
     }
 
     public static function getVersions()

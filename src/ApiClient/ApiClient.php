@@ -2,7 +2,7 @@
 
 namespace Popo1h\AapiCore\ApiClient;
 
-use Popo1h\AapiCore\Core\Exceptions\ApiDoException\ApiResponseErrorException;
+use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiDoException\ApiResponseErrorException;
 use Popo1h\AapiCore\Core\Net;
 use Popo1h\AapiCore\Core\Request;
 use Popo1h\AapiCore\Core\RequestParam;
