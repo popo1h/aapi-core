@@ -7,9 +7,10 @@ abstract class Net
     /**
      * @param string $apiUrl
      * @param string $requestStr
+     * @param array|null $hostIps
      * @return string responseStr
      */
-    abstract public function request($apiUrl, $requestStr);
+    abstract public function request($apiUrl, $requestStr, $hostIps = null);
 
     /**
      * @return string

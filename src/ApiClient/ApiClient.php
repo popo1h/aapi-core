@@ -34,16 +34,17 @@ class ApiClient
      * @param string $apiName
      * @param RequestParam $param
      * @param string|null $version
+     * @param array|null $hostIps
      * @return Response
      * @throws ApiResponseErrorException
      */
-    public function request($apiName, RequestParam $param, $version = null)
+    public function request($apiName, RequestParam $param, $version = null, $hostIps = null)
     {
         $request = new Request($apiName, $param, $version);
 
         $apiUrl = $this->serverUrl;
 
-        $responseStr = $this->net->request($apiUrl, StringPack::pack($request));
+        $responseStr = $this->net->request($apiUrl, StringPack::pack($request), $hostIps);
         try {
             $response = StringPack::unpack($responseStr);
         } catch (\Exception $e) {
