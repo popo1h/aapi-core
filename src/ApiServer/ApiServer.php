@@ -5,7 +5,7 @@ namespace Popo1h\AapiCore\ApiServer;
 use Pimple\Container;
 use Popo1h\AapiCore\ApiServer\DefaultApi\ApiListApi;
 use Popo1h\AapiCore\Core\BaseApi;
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiDoException\ApiNotFoundException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiDoException\ApiNotFoundException;
 use Popo1h\AapiCore\Core\Net;
 use Popo1h\AapiCore\Core\Request;
 use Popo1h\Support\Objects\StringPack;

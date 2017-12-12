@@ -2,7 +2,7 @@
 
 namespace Popo1h\AapiCore\Core;
 
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiDoException\ApiVersionNotFoundException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiDoException\ApiVersionNotFoundException;
 use Popo1h\Support\Objects\CommentHelper;
 
 abstract class BaseApi

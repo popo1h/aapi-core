@@ -2,9 +2,9 @@
 
 namespace Popo1h\AapiCore\ApiClient;
 
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiClientException\ClientNetNotDefineException;
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiClientException\ClientNetNotFoundException;
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiClientException\ClientServerUrlNotDefineException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiClientException\ClientNetNotDefineException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiClientException\ClientNetNotFoundException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiClientException\ClientServerUrlNotDefineException;
 use Popo1h\AapiCore\Core\Net;
 
 class ApiClientFactory

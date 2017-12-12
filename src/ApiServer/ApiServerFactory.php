@@ -2,8 +2,8 @@
 
 namespace Popo1h\AapiCore\ApiServer;
 
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiServerException\ServerNetNotDefineException;
-use Popo1h\AapiCore\Core\Exceptions\AapiCoreException\ApiServerException\ServerNetNotFoundException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiServerException\ServerNetNotDefineException;
+use Popo1h\AapiCore\Exceptions\AapiCoreException\ApiServerException\ServerNetNotFoundException;
 use Popo1h\AapiCore\Core\Net;
 
 class ApiServerFactory
